@@ -72,7 +72,7 @@ eval $command >> $temp1
 if [[ $(head -n 1 $soegypath\/cache\/$cachename | cut -d " " -f1) != $(md5sum $qanda | cut -d " " -f1)  ]]
    then
 
-echo $(md5sum $qanda) > $soegypath\/cache\/$cachename
+echo $(md5sum $qanda | cut -d " " -f1) > $soegypath\/cache\/$cachename
 
 while read linematch
  do
